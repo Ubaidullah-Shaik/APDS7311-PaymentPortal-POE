@@ -1,0 +1,217 @@
+.nav-panel {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.nav-panel button {
+    flex: 1;
+    padding: 10px;
+    background-color: #4c00b4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* Add margin between buttons */
+}
+
+.nav-panel button:hover {
+    background-color: #3a0090;
+}
+
+.nav-panel button.active {
+    background-color: #3a0090; /* Active button color */
+    font-weight: bold; /* Bold text for active button */
+}
+
+.dashboard-container {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4c00b4;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a0090;
+}
+
+.welcome-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome-section h1 {
+  color: #39398f;
+  font-size: 2.2em;
+}
+
+.welcome-message {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+/* Animation for the welcome message with color transition */
+.welcome-message-animated {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1.5s ease forwards, colorChange 5s ease-in-out infinite;
+  }
+  
+  /* Keyframes for fade-in and slide-up animation */
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Keyframes for color animation */
+  @keyframes colorChange {
+    0% {
+      color: #ff5733; /* Bright orange */
+    }
+    25% {
+      color: #ffbd33; /* Vibrant yellow */
+    }
+    50% {
+      color: #33ff57; /* Bright green */
+    }
+    75% {
+      color: #3385ff; /* Bright blue */
+    }
+    100% {
+      color: #ff33a1; /* Bright pink */
+    }
+  }
+
+  /* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4c00b4;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+td:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Make the table responsive */
+@media (max-width: 768px) {
+  table {
+      width: 100%;
+      font-size: 14px;
+  }
+  th, td {
+      padding: 8px;
+  }
+}
+
+/* Add some spacing between the table and other elements */
+h1 {
+  margin-top: 40px;
+  font-size: 1.8em;
+  color: #39398f;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+}
+
+.logout-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
