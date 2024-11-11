@@ -1,0 +1,48 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# Reference: https://circleci.com/docs/configuration-reference
+version: 2.1
+
+# Define jobs to be used in a workflow.
+jobs:
+  say-hello:
+    # Specify the execution environment (Docker).
+    docker:
+      - image: cimg/base:current
+
+    # Define steps for the job.
+    steps:
+      - checkout  # Checkout the code.
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+
+  sonarqube:
+    # SonarQube analysis
+    working_directory: ~/build
+    docker:
+      - image: sonarsource/sonar-scanner-cli
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: ~/workspace
+      - run:
+          name: SonarQube analysis
+          command: |
+            SONAR_BRANCH="${CIRCLE_BRANCH:-master}"
+            echo "Sonar branch value is: $SONAR_BRANCH"
+            echo "Sonar org value is: $SONAR_ORG"
+            sonar-scanner \
+              -Dsonar.projectKey="$SONAR_PROJECT_KEY" \
+              -Dsonar.organization="$SONAR_ORG" \
+              -Dsonar.host.url=https://sonarcloud.io \
+              -Dsonar.exclusions="/android/,/ios/" \
+              -Dsonar.login="$SONAR_TOKEN" \
+              -Dsonar.branch.name="$SONAR_BRANCH" \
+              -Dsonar.sources="."
+
+# Define workflows to orchestrate jobs.
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
+      - sonarqube
